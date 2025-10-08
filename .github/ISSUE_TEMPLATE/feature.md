@@ -2,7 +2,7 @@
 name: Feature
 about: Feature level tasks
 title: 'feature: '
-labels: 'feature'
+labels: ''
 assignees: ''
 
 ---
