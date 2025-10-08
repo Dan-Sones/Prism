@@ -2,17 +2,9 @@
 name: Feature
 about: Feature level tasks
 title: 'feature: '
-labels: ''
+labels: 'feature'
 assignees: ''
 
----
-
----
-name: Feature Definition
-about: Define a major feature or module for the project.
-title: 'Feature: [Short, descriptive title of the feature]'
-labels: 'feature'
-assignees: '@me' # Assign to yourself by default
 ---
 
 ## Feature Definition
