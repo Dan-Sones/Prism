@@ -18,7 +18,12 @@
 
 package org.myorg.quickstart;
 
+import org.apache.flink.api.common.typeinfo.TypeInformation;
+import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Skeleton for a Flink DataStream Job.
@@ -58,6 +63,14 @@ public class DataStreamJob {
 		 * https://nightlies.apache.org/flink/flink-docs-stable/
 		 *
 		 */
+
+		List<String> lines = Arrays.asList("Cool flink", "wow so awesome", "I am bad data", "here we go");
+
+		DataStream<String> text = env.fromCollection(lines, TypeInformation.of(String.class));
+
+		DataStream<String> result = text.filter(line -> line.contains("I am bad data"));
+
+		result.print();
 
 		// Execute program, beginning computation.
 		env.execute("Flink Java API Skeleton");
